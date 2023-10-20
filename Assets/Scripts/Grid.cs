@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GridGizmo : MonoBehaviour
+public class Grid : MonoBehaviour
 {
     public int gridWidth = 5;
     public int gridHeight = 5; 
-    public float spacing = 1.0f; 
+    public float spacing = 1.0f;
+
+    private void Awake()
+    {
+        
+    }
 
     private void OnDrawGizmos()
     {

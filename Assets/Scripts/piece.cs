@@ -52,7 +52,7 @@ public class piece : MonoBehaviour
 
     private void DisableScript()
     {
-        Debug.Log("desactivado");
+      //  Debug.Log("desactivado");
         piece pieza = this;
         pieza.enabled = false;
     }

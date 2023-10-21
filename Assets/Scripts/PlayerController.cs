@@ -36,19 +36,14 @@ public class PlayerController : MonoBehaviour
         inputHorizontal = Input.GetAxisRaw("Horizontal");
         ClampPosition();
         if (CanMoveLeft && inputHorizontal < 0)
-                {
+        {
                     transform.Translate(new Vector3(0, 0, inputHorizontal * mov_speed * Time.deltaTime));
-                }
+        }
 
-                if (CanMoveRight && inputHorizontal > 0)
-                {
+      if (CanMoveRight && inputHorizontal > 0)
+      {
                     transform.Translate(new Vector3(0, 0, inputHorizontal * mov_speed * Time.deltaTime));
-                }
-
-                if (Input.GetKeyDown(KeyCode.H))
-                {
-                   Debug.Log(inputHorizontal);
-                }
+      }
         
     }
 

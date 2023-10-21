@@ -10,28 +10,18 @@ public class piece : MonoBehaviour
 {
     [SerializeField] private float  fallSpeedMultiplier;
     [HideInInspector]public float fallSpeed;
-    private float FastFall, baseSpeed;
+  
     private Rigidbody rb;
     private int n_pos = 5;
     
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        FastFall = fallSpeed * fallSpeedMultiplier;
-        
     }
-    private void Start()
-    {
-         baseSpeed = 10;
-    }
+   
 
     void Update()
-    {
-        if(fallSpeed != 10)
-        {
-            fallSpeed = 10;
-        }
-      
+    {      
         Fall(fallSpeed);
         ManageFallSpeed();
         HorizontalMovement();
@@ -47,9 +37,9 @@ public class piece : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            fallSpeed = FastFall;
+            fallSpeed = 15;
         }
-        else fallSpeed = baseSpeed;
+        else fallSpeed = 10;
     }
 
     private void FreezePiece()

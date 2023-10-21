@@ -66,6 +66,6 @@ public class OptionsMenuController : MonoBehaviour
     public void ReturnToMainMenu()
     {
         // Vuelve al menú principal
-        SceneManager.LoadScene("MainMenuScene");
+        SceneManager.LoadScene("MainMenu");
     }
 }

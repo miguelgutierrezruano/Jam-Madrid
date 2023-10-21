@@ -57,7 +57,6 @@ public class piece : MonoBehaviour
         pieza.enabled = false;
     }
 
-   
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -66,8 +65,8 @@ public class piece : MonoBehaviour
             this.tag = "floor";
             FreezePiece();
             PieceSpawner.instance.generatepiece = true;
-             DisableScript();
-            
+            DisableScript();
+            SnapYZPos();
         }
     }
 
@@ -85,5 +84,11 @@ public class piece : MonoBehaviour
         }
     }
 
+    private void SnapYZPos()
+    {
+        float snappedY = Mathf.Round(transform.position.y);
+        
+        transform.position = new Vector3(transform.position.x, snappedY,transform.position.z);
+    }
    
 }

@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46b05253361cbb842be589a566f26078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSpeed: 5
+  fallSpeed: 10
   fallSpeedMultiplier: 1.5
 --- !u!54 &887270364592528020
 Rigidbody:

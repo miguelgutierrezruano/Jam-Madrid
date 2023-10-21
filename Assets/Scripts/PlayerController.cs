@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         //transform.Translate(new Vector3(0,0,Input.GetAxisRaw("Horizontal") * mov_speed * Time.deltaTime));
         inputHorizontal = Input.GetAxisRaw("Horizontal");
+        ClampPosition();
         if (CanMoveLeft && inputHorizontal < 0)
                 {
                     transform.Translate(new Vector3(0, 0, inputHorizontal * mov_speed * Time.deltaTime));
@@ -63,6 +65,12 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector3.up * jump_force);
             D_Jump = false;
         }
+    }
+
+    private void ClampPosition()
+    {
+        float ClampedZ = Math.Clamp(transform.position.z, -0.3701281f, 9.890411f);
+        transform.position = new Vector3(transform.position.x, transform.position.y, ClampedZ);
     }
     #endregion
     #region Checkeos

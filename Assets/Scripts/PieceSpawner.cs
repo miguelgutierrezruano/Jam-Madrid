@@ -6,6 +6,8 @@ public class PieceSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject cubo;
     public static PieceSpawner instance;
+    [HideInInspector]public bool generatepiece;
+    [SerializeField] private float pieceSpeed;
     private void Awake()
     {
         instance = this;
@@ -16,10 +18,20 @@ public class PieceSpawner : MonoBehaviour
     {
         SpawnPiece();
     }
+    private void Update()
+    {
+        if (generatepiece)
+        {
+            SpawnPiece();
+        }
+    }
 
     public void SpawnPiece()
     {
-        GameObject piece = Instantiate(cubo, transform.position,transform.rotation);
+        GameObject pieza = Instantiate(cubo, transform.position,transform.rotation);
+        generatepiece = false;
+        piece piezascript = pieza.GetComponent<piece>();
+        piezascript.fallSpeed = pieceSpeed;
        // Debug.Log("spawneo pieza");
     }
 }

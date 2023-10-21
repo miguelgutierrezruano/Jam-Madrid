@@ -8,7 +8,8 @@ using UnityEngine.Rendering;
 
 public class piece : MonoBehaviour
 {
-    [SerializeField] private float fallSpeed, fallSpeedMultiplier;
+    [SerializeField] private float  fallSpeedMultiplier;
+    [HideInInspector]public float fallSpeed;
     private float FastFall, baseSpeed;
     private Rigidbody rb;
     private int n_pos = 5;
@@ -56,11 +57,7 @@ public class piece : MonoBehaviour
         pieza.enabled = false;
     }
 
-    private void GenerarPieza()
-    {
-        PieceSpawner.instance.SpawnPiece();
-        Debug.Log(this.name);
-    }
+   
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -68,7 +65,7 @@ public class piece : MonoBehaviour
         {
             this.tag = "floor";
             FreezePiece();
-            GenerarPieza();
+            PieceSpawner.instance.generatepiece = true;
              DisableScript();
             
         }

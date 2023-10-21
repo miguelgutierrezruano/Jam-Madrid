@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PieceSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject cubo;
+   
     public static PieceSpawner instance;
     [HideInInspector]public bool generatepiece;
-    [SerializeField] private float pieceSpeed;
+   
+    [SerializeField] private GameObject[] piezas;
     private void Awake()
     {
         instance = this;
@@ -17,21 +18,21 @@ public class PieceSpawner : MonoBehaviour
     private void Start()
     {
         SpawnPiece();
+        
     }
     private void Update()
     {
         if (generatepiece)
         {
             SpawnPiece();
-        }
+        }      
     }
-
+   
     public void SpawnPiece()
     {
-        GameObject pieza = Instantiate(cubo, transform.position,transform.rotation);
+
+        int dice = Random.Range(0, piezas.Length);
+        GameObject pieza = Instantiate(piezas[dice], transform.position, transform.rotation);
         generatepiece = false;
-        piece piezascript = pieza.GetComponent<piece>();
-        piezascript.fallSpeed = pieceSpeed;
-       // Debug.Log("spawneo pieza");
     }
 }

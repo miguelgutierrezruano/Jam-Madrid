@@ -185,7 +185,15 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8704360642391374114}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2c789f9c8e36172469df1dda4b7ffb86,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 667808532694675798}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2c789f9c8e36172469df1dda4b7ffb86,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4890493431731175373}
   m_SourcePrefab: {fileID: 100100000, guid: 2c789f9c8e36172469df1dda4b7ffb86, type: 3}
 --- !u!4 &4634728365352504861 stripped
 Transform:
@@ -193,3 +201,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5177843904564570614}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5411651409608381607 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2c789f9c8e36172469df1dda4b7ffb86,
+    type: 3}
+  m_PrefabInstance: {fileID: 5177843904564570614}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &667808532694675798
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5411651409608381607}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 114
+  m_CollisionDetection: 1
+--- !u!114 &4890493431731175373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5411651409608381607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b05253361cbb842be589a566f26078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallSpeedMultiplier: 1.5
+  fallSpeed: 0

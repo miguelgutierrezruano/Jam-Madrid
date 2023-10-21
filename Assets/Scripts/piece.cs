@@ -13,20 +13,29 @@ public class piece : MonoBehaviour
     private float FastFall, baseSpeed;
     private Rigidbody rb;
     private int n_pos = 5;
-
+    
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         FastFall = fallSpeed * fallSpeedMultiplier;
-        baseSpeed = fallSpeed;
+        
+    }
+    private void Start()
+    {
+         baseSpeed = 10;
     }
 
     void Update()
     {
+        if(fallSpeed != 10)
+        {
+            fallSpeed = 10;
+        }
+      
         Fall(fallSpeed);
         ManageFallSpeed();
         HorizontalMovement();
-       
+       if (Input.GetKeyDown(KeyCode.H)) { print(fallSpeed); }
     }
 
     private void Fall(float speed)

@@ -76,6 +76,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5614747886116713176}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 689a1fbdcc200f74392ef77847a9b819,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8489027379579611762}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 689a1fbdcc200f74392ef77847a9b819,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3559049868129250255}
   m_SourcePrefab: {fileID: 100100000, guid: 689a1fbdcc200f74392ef77847a9b819, type: 3}
 --- !u!1 &1929318488507458962 stripped
 GameObject:
@@ -104,3 +112,44 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.009895833, y: 0.019791663, z: 0.019791666}
   m_Center: {x: -0.000000002561137, y: 0.000000036787235, z: -0.00000004284083}
+--- !u!114 &8489027379579611762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929318488507458962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b05253361cbb842be589a566f26078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallSpeedMultiplier: 1.5
+  fallSpeed: 0
+--- !u!54 &3559049868129250255
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929318488507458962}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 114
+  m_CollisionDetection: 1

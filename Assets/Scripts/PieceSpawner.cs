@@ -31,7 +31,7 @@ public class PieceSpawner : MonoBehaviour
     public void SpawnPiece()
     {
 
-        int dice = 5;//Random.Range(0, piezas.Length);
+        int dice = Random.Range(0, piezas.Length);
         GameObject pieza = Instantiate(piezas[dice], transform.position, transform.rotation);
         generatepiece = false;
     }

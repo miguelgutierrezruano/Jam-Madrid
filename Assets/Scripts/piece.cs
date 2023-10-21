@@ -25,12 +25,20 @@ public class piece : MonoBehaviour
         Fall(fallSpeed);
         ManageFallSpeed();
         HorizontalMovement();
-       if (Input.GetKeyDown(KeyCode.H)) { print(fallSpeed); }
+        RotatePiece();
+    }
+
+    private void RotatePiece()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            transform.Rotate(new Vector3(90, 0, 0),Space.Self);
+        }
     }
 
     private void Fall(float speed)
     {
-        transform.Translate(Vector3.down * speed * Time.deltaTime); 
+        transform.Translate(Vector3.down * speed * Time.deltaTime, Space.World); 
     }
 
     private void ManageFallSpeed()
@@ -39,7 +47,7 @@ public class piece : MonoBehaviour
         {
             fallSpeed = 15;
         }
-        else fallSpeed = 10;
+        else fallSpeed = 5;
     }
 
     private void FreezePiece()
@@ -65,7 +73,7 @@ public class piece : MonoBehaviour
             FreezePiece();
             PieceSpawner.instance.generatepiece = true;
             DisableScript();
-            SnapYZPos();
+         
         }
     }
 
@@ -82,12 +90,4 @@ public class piece : MonoBehaviour
             n_pos++;
         }
     }
-
-    private void SnapYZPos()
-    {
-        float snappedY = Mathf.Round(transform.position.y);
-        
-        transform.position = new Vector3(transform.position.x, snappedY,transform.position.z);
-    }
-   
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2982518911735011872}
   - component: {fileID: 2146591811066375912}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: collider 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ GameObject:
   - component: {fileID: 5481242023111196799}
   - component: {fileID: 24656836203521609}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: collider 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -235,8 +235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46b05253361cbb842be589a566f26078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSpeed: 10
   fallSpeedMultiplier: 1.5
+  fallSpeed: 10
 --- !u!4 &6511387981600676738 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a21e7e6ac183c7c45a680abe27fb9a01,

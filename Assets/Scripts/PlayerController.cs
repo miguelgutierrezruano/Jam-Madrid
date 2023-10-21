@@ -10,11 +10,14 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     RaycastHit FloorHit, RightHit, LeftHit;
     private int layerMask = 1 << 8;
+    private float inputHorizontal; 
+    
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         grounded = true;
         layerMask = ~layerMask;
+        
     }
 
     void Update()
@@ -28,17 +31,23 @@ public class PlayerController : MonoBehaviour
     #region movimiento
     private void movement()
     {
-        //  transform.Translate(new Vector3(0,0,Input.GetAxisRaw("Horizontal") * mov_speed * Time.deltaTime));
+        //transform.Translate(new Vector3(0,0,Input.GetAxisRaw("Horizontal") * mov_speed * Time.deltaTime));
+        inputHorizontal = Input.GetAxisRaw("Horizontal");
+        if (CanMoveLeft && inputHorizontal < 0)
+                {
+                    transform.Translate(new Vector3(0, 0, inputHorizontal * mov_speed * Time.deltaTime));
+                }
 
-        if (CanMoveLeft && Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(new Vector3(0, 0, Input.GetAxisRaw("Horizontal") * mov_speed * Time.deltaTime));
-        }
+                if (CanMoveRight && inputHorizontal > 0)
+                {
+                    transform.Translate(new Vector3(0, 0, inputHorizontal * mov_speed * Time.deltaTime));
+                }
 
-        if (CanMoveRight && Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(new Vector3(0, 0, Input.GetAxisRaw("Horizontal") * mov_speed * Time.deltaTime));
-        }
+                if (Input.GetKeyDown(KeyCode.H))
+                {
+                   Debug.Log(inputHorizontal);
+                }
+        
     }
 
     private void jump()

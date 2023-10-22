@@ -10,13 +10,16 @@ public class piece : MonoBehaviour
 {
     [SerializeField] private float  fallSpeedMultiplier;
     [HideInInspector]public float fallSpeed;
-  
+    [HideInInspector] public bool CanMoveLeft, CanMoveRight;
     private Rigidbody rb;
     private int n_pos = 5;
-    
+    [SerializeField] private GameObject triggers;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        CanMoveLeft = true;
+        CanMoveRight = true;
+        
     }
    
 
@@ -26,6 +29,7 @@ public class piece : MonoBehaviour
         ManageFallSpeed();
         HorizontalMovement();
         RotatePiece();
+     
     }
 
     private void RotatePiece()
@@ -62,14 +66,16 @@ public class piece : MonoBehaviour
       //  Debug.Log("desactivado");
         piece pieza = this;
         pieza.enabled = false;
+        triggers.SetActive(false);
+        gameObject.layer = 0;
     }
 
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "floor")
+        if (collision.gameObject.tag == "floor" || collision.gameObject.tag == "piece")
         {
-            this.tag = "floor";
+           // this.tag = "floor";
             FreezePiece();
             PieceSpawner.instance.generatepiece = true;
             DisableScript();
@@ -79,15 +85,16 @@ public class piece : MonoBehaviour
 
     private void HorizontalMovement()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && n_pos > 0)
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && n_pos > 0 && CanMoveLeft)
         {
             transform.position += Vector3.back;
             n_pos--;
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow) && n_pos < 10)
+        if (Input.GetKeyDown(KeyCode.RightArrow) && n_pos <= 10 && CanMoveRight)
         {
             transform.position += Vector3.forward;
             n_pos++;
+            print(n_pos);
         }
     }
 }
